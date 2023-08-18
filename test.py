@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from app import app
 import unittest
-
+import pytest
 from selenium.webdriver.common.by import By
 import sys
 
