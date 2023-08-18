@@ -22,11 +22,16 @@ class Test(unittest.TestCase):
         # self.assertEqual(self.result.data.decode('utf-8'), "Rodrigo")
 
 
-    # def test_item(self, driver):
-    #    driver.get('/')
-    #    sample_text = "Rodrigo"
-    #    text_field = driver.find_element(By.ID, "sampletodotext")
-    #    email_text_field.send_keys(sample_text)
+    def test_item(self, driver):
+       driver.get('/')
+       title1_text = "Rodrigo"
+       text_title1 = driver.find_element(By.ID, "title1")
+       text_title1.send_keys(title1_text)
 
+       title2_text = "Barbosa"
+       text_title2 = driver.find_element(By.ID, "title2")
+       text_title2.send_keys(title2_text)
 
-    #    driver.find_element(By.ID, "addbutton").click()
+       title3_text = "Costa"
+       text_field3 = driver.find_element(By.ID, "title3")
+       text_field3.send_keys(title3_text)
