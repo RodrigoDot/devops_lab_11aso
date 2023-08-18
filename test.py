@@ -42,3 +42,5 @@ class Test:
         text_field3.send_keys(title3_text)
 
         assert text_field3 == title3_text
+
+# https://www.lambdatest.com/learning-hub/pytest-tutorial
