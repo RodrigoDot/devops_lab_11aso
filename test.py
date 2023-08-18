@@ -5,6 +5,7 @@ import unittest
 from selenium.webdriver.common.by import By
 import sys
 
+@pytest.mark.usefixtures('driver')
 class Test(unittest.TestCase):
     def setUp(self):
         # cria uma instância do unittest, precisa do nome "setUp"
