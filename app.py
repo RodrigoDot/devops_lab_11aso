@@ -1,10 +1,10 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
 @app.route("/")
 def pagina_inicial():
-    return "Oi, vc que está aí do outro lado, v1"
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run()
