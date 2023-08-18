@@ -3,7 +3,7 @@ import pytest
 from selenium.webdriver.common.by import By
 import sys
 
-@pytest.mark.usefixtures('init_driver')
+@pytest.mark.usefixtures('driver')
 class TestLink:
     # def setUp(self):
     #     # cria uma instância do unittest, precisa do nome "setUp"
@@ -21,9 +21,13 @@ class TestLink:
         # self.assertEqual(self.result.data.decode('utf-8'), "Rodrigo")
 
 
-    def test_content(self, driver):
-        driver.get('/')
-        driver.implicitly_wait(10)
+    def test_content(self):
+        driver_node = webdriver.Chrome(ChromeDriverManager().install())
+        self.driver=driver_node
+        self.driver.maximize_window()
+
+        self.driver.get('/')
+        self.driver.implicitly_wait(10)
 
         title1_text = "Rodrigo"
         text_title1 = driver.find_element(By.ID, "title1")
