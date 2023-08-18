@@ -6,8 +6,6 @@
 from app import app
 import unittest
 
-
-
 # @pytest.mark.usefixtures('driver')
 class Test(unittest.TestCase):
     def setUp(self):
@@ -27,6 +25,8 @@ class Test(unittest.TestCase):
 
         HtmlFile = open('templates/index.html', 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
+
+        print('source_code >>>>>>>>>>', source_code)
 
         self.assertEqual(self.result.data.decode('utf-8'), source_code)
 
