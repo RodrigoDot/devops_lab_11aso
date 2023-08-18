@@ -5,6 +5,7 @@
 
 from app import app
 import unittest
+from flask import render_template
 
 # @pytest.mark.usefixtures('driver')
 class Test(unittest.TestCase):
@@ -28,7 +29,7 @@ class Test(unittest.TestCase):
 
         print('source_code >>>>>>>>>>', source_code)
 
-        self.assertEqual(self.result.data.decode('utf-8'), source_code)
+        self.assertEqual(self.result.data.decode('utf-8'), render_template('index.html'))
 
 
     # def test_content(self):
