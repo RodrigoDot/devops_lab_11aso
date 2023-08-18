@@ -3,8 +3,8 @@ import pytest
 from selenium.webdriver.common.by import By
 import sys
 
-@pytest.mark.usefixtures('driver')
-class Test:
+@pytest.mark.usefixtures('init_driver')
+class TestLink:
     # def setUp(self):
     #     # cria uma instância do unittest, precisa do nome "setUp"
     #     self.app = app.test_client()
