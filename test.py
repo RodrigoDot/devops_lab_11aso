@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-from app import app
-import unittest
 import pytest
 from selenium.webdriver.common.by import By
 import sys
@@ -23,16 +21,24 @@ class Test:
         # self.assertEqual(self.result.data.decode('utf-8'), "Rodrigo")
 
 
-    def test_item(self, driver):
-       driver.get('/')
-       title1_text = "Rodrigo"
-       text_title1 = driver.find_element(By.ID, "title1")
-       text_title1.send_keys(title1_text)
+    def test_content(self, driver):
+        driver.get('/')
+        driver.implicitly_wait(10)
 
-       title2_text = "Barbosa"
-       text_title2 = driver.find_element(By.ID, "title2")
-       text_title2.send_keys(title2_text)
+        title1_text = "Rodrigo"
+        text_title1 = driver.find_element(By.ID, "title1")
+        text_title1.send_keys(title1_text)
 
-       title3_text = "Costa"
-       text_field3 = driver.find_element(By.ID, "title3")
-       text_field3.send_keys(title3_text)
+        assert text_title1 == title1_text
+
+        title2_text = "Barbosa"
+        text_title2 = driver.find_element(By.ID, "title2")
+        text_title2.send_keys(title2_text)
+
+        assert text_title2 == title2_text
+
+        title3_text = "Costa"
+        text_field3 = driver.find_element(By.ID, "title3")
+        text_field3.send_keys(title3_text)
+
+        assert text_field3 == title3_text
