@@ -24,7 +24,11 @@ class Test(unittest.TestCase):
     def test_conteudo(self):
         # verifica o retorno do conteudo da pagina
         print('PRINT >>>>>>>>>>', self.result.data.decode('utf-8'))
-        self.assertEqual(self.result.data.decode('utf-8'), "Rodrigo")
+
+        HtmlFile = open(fname, 'r', encoding='utf-8')
+        source_code = HtmlFile.read() 
+
+        self.assertEqual(self.result.data.decode('utf-8'), source_code)
 
 
     # def test_content(self):
