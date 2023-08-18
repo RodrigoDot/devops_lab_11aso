@@ -25,7 +25,7 @@ class Test(unittest.TestCase):
         # verifica o retorno do conteudo da pagina
         print('PRINT >>>>>>>>>>', self.result.data.decode('utf-8'))
 
-        HtmlFile = open(fname, 'r', encoding='utf-8')
+        HtmlFile = open('templates/index.html', 'r', encoding='utf-8')
         source_code = HtmlFile.read() 
 
         self.assertEqual(self.result.data.decode('utf-8'), source_code)
