@@ -3,11 +3,11 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-def pagina_inicial():
+def initial_page():
     return render_template('index.html')
 
 @app.route("/test")
-def pagina_inicial():
+def test_page():
     return 'Rota de testes funcionando'
 
 if __name__ == '__main__':
