@@ -6,5 +6,9 @@ app = Flask(__name__)
 def pagina_inicial():
     return render_template('index.html')
 
+@app.route("/test")
+def pagina_inicial():
+    return 'Rota de testes funcionando'
+
 if __name__ == '__main__':
     app.run()
