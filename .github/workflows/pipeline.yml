@@ -20,11 +20,11 @@ jobs:
           python-version: '3.10'
 
       - name: Install Requirements
-        run:  pip install flask pytest pytest-cov
+        run:  pip install flask pytest pytest-cov Selenium>=4.0.0 pytest-selenium
               
       - name: Unit Test
         run: |
-          coverage run --source=app -m pytest test.py
+          coverage run --source=app -m pytest  test.py 
           coverage report -m
           coverage xml -i
 
